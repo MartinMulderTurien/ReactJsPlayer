@@ -1,0 +1,122 @@
+{
+   "name":"EditNewIncidentDataEntry",
+   "children": [
+       {
+           "type": "formGroup",
+           "visualizationHint":"Fixed",
+           "name": "IncidentGegevens",
+           "label": "IncidentGegevens",
+           "isReadOnly": false,
+           "isHidden": false,
+           "visualizationRules": [
+               {
+                   "visualizationAssignment": {
+                       "leftName":"IncidentGegevens",
+                       "visualization": "ReadOnly",
+                       "condition": {
+                           "Operator": "Equals",
+                           "leftName": "Status",
+                           "value": "Closed"
+                       }
+                   }
+               }
+
+           ],
+           "children": [
+               {
+                "type": "fieldGroup",
+                "layoutStyle": "Simple",
+                "groupPositioning":"Vertical",
+                "name":"IncidentFieldGroup1",
+                "children":[
+                    {
+                        "type":"textField",
+                        "visualizationHint":"SingleLine",
+                        "casing":"None",
+                        "required":true,
+                        "name":"IncidentSchadeNummer",
+                        "isReadOnly":false,
+                        "value":"1000002",
+                        "label":"Incidentnummer",
+                        "maxLength":50,
+                        "emptyMessage":"Incidentnummer is niet ingevuld.",
+                        "errorMessage":"Incidentnummer bevat een ongeldige waarde.",
+                        "maxLengthMessage":"Incidentnummer mag niet groter zijn dan 50."
+                    },
+                    {
+                        "type":"codeListField",
+                        "visualizationHint":"FilteringSelectBox",
+                        "multiSelect":false,
+                        "hideEmptyValue":false,
+                        "skipRequiredValidation":true,
+                        "name":"IncidentGebeurtenisCode",
+                        "label":"Gebeurtenis",
+                        "value":"20",
+                        "allowedValues": [
+                            {
+                                "externalValue":"",
+                                "internalValue":""
+                            },
+                            {
+                                "externalValue":"Aanrijding/aanvaring/luchtverkeer",
+                                "internalValue":"10"
+                            },
+                            {
+                                "externalValue":"Annulering",
+                                "internalValue":"20"
+                            },
+                            {
+                                "externalValue":"Bliksem/inductie",
+                                "internalValue":"4"
+                            }
+                        ]
+
+                    }
+
+                ]
+               }
+
+           ]
+       },
+       {
+           "type":"formGroup",
+           "visualizationHint":"Fixed",
+           "name":"ClaimSupportFields1",
+           "isHidden":true,
+           "children":[
+               {
+                   "type":"codeListField",
+                   "visualizationHint":"CheckBoxes",
+                   "multiSelect":true,
+                   "isHidden": true,
+                   "name":"Status",
+                   "visualizationDependency":true,
+                   "emptyMessage":"Status is niet ingevuld.",
+                   "errorMessage":"Status bevat een ongeldige waarde.",
+                   "label":"Status",
+                   "value":"Created",
+                   "allowedValues":[
+                       {
+                           "externalValue":"Voorlopig",
+                           "internalValue":"Created"
+                       },
+                       {
+                           "externalValue":"Lopend",
+                           "internalValue":"Submitted"
+                       },
+                       {
+                           "externalValue":"Vervallen",
+                           "internalValue":"Expired"
+                       },
+                       {
+                           "externalValue":"Gesloten",
+                           "internalValue":"Closed"
+                       }
+                   ]
+               }
+           ]
+
+       }
+
+   ]
+}

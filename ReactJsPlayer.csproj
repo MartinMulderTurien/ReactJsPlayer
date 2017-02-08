@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <ProjectGuid>{717AC111-682B-4994-B2B0-2C041972BB23}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <OutputPath>bin</OutputPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>ReactJsPlayer</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\WebApplications\Microsoft.WebApplication.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\WebApplications\Microsoft.WebApplication.targets')" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>13559</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:13559/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <TypeScriptRemoveComments>false</TypeScriptRemoveComments>
+    <TypeScriptSourceMap>true</TypeScriptSourceMap>
+    <TypeScriptTarget>ES6</TypeScriptTarget>
+    <TypeScriptJSXEmit>React</TypeScriptJSXEmit>
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptModuleKind />
+    <TypeScriptOutFile />
+    <TypeScriptOutDir />
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <TypeScriptRemoveComments>true</TypeScriptRemoveComments>
+    <TypeScriptSourceMap>false</TypeScriptSourceMap>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="src\datepicker.css" />
+    <Content Include="src\forms\claim.form.xml" />
+    <Content Include="src\forms\polis.form.xml" />
+    <Content Include="src\index.html" />
+    <Content Include="src\js\actions\formactions.js" />
+    <Content Include="src\js\appcontext.js" />
+    <Content Include="src\js\certigoapp.js" />
+    <Content Include="src\js\common\FormParser.js" />
+    <Content Include="src\js\common\Validator.js" />
+    <Content Include="src\js\common\VisualizationHandler.js" />
+    <Content Include="src\js\components\MetaPortalPlayer.js" />
+    <Content Include="src\js\components\MetaPortalPlayer\BankAccountField.js" />
+    <Content Include="src\js\components\MetaPortalPlayer\BaseField.js" />
+    <Content Include="src\js\components\MetaPortalPlayer\BooleanField.js" />
+    <Content Include="src\js\components\MetaPortalPlayer\CertigoDateField.js" />
+    <Content Include="src\js\components\MetaPortalPlayer\CodeListField.js" />
+    <Content Include="src\js\components\MetaPortalPlayer\ComponentFactory.js" />
+    <Content Include="src\js\components\MetaPortalPlayer\CurrencyField.js" />
+    <Content Include="src\js\components\MetaPortalPlayer\EmailField.js" />
+    <Content Include="src\js\components\MetaPortalPlayer\Field.js" />
+    <Content Include="src\js\components\MetaPortalPlayer\FieldGroup.js" />
+    <Content Include="src\js\components\MetaPortalPlayer\FormGroup.js" />
+    <Content Include="src\js\components\MetaPortalPlayer\IntegerField.js" />
+    <Content Include="src\js\components\MetaPortalPlayer\PhoneNumberField.js" />
+    <Content Include="src\js\components\MetaPortalPlayer\PostalCodeField.js" />
+    <Content Include="src\js\components\MetaPortalPlayer\TextField.js" />
+    <Content Include="src\js\components\MetaPortalPlayer\TreeView.js" />
+    <Content Include="src\js\components\MetaPortalPlayer\UseCaseNavigator.js" />
+    <Content Include="src\js\dispatcher.js" />
+    <Content Include="src\js\stores\formstore.js" />
+    <Content Include="src\style.css" />
+    <Content Include="src\test\.setup.js" />
+    <Content Include="src\test\components\MetaPortalPlayer\TextField.test.js" />
+    <Content Include="src\test\MyFirst.test.js" />
+    <Content Include="src\test\Validator.test.js" />
+    <Content Include="webpack.config.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="src\forms\claim.form.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".babelrc" />
+    <Content Include=".gitignore" />
+    <Content Include="package.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="web.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+</Project>

@@ -1,0 +1,759 @@
+<?xml version="1.0" encoding="utf-16"?>
+<form name="EditNewInceidentDataEntry" xmlns="http://Certigo.Core/MetaPortalFormsModels">
+	<tree treeName="ClaimTree" activationId="1000002" label="Incident - 1000002" type="Incident" active="true" length="24" navigationValue="toIncident" name="Incident">
+		<treeNode activationId="1400002" label="VL-1400002 - Voorlopig zonder polis" type="Claim" length="22" navigationValue="toClaim" name="Claim0">
+			<treeNode label="Onbekend" type="LossGroup" length="20" skipRequiredValidation="true" name="LossGroup00" isDisabled="true">
+				<treeNode activationId="1" label="[1] VL-Volledig casco - Auto - Voorlopig zonder dekking" type="Loss" length="20" navigationValue="toLoss" name="Loss000" />
+			</treeNode>
+		</treeNode>
+	</tree>
+	<formGroup visualizationHint="Fixed" name="IncidentGegevens">
+		<visualizationRules>
+			<visualizationRule>
+				<visualizationAssignment>
+					<left>
+						<value>IncidentGegevens</value>
+					</left>
+					<visualizationValueReadOnly />
+				</visualizationAssignment>
+				<visualizationConditions>
+					<visualizationCondition>
+						<relationalOperatorEqualsTo />
+						<left>
+							<value>Status</value>
+						</left>
+						<literalValue>
+							<value>Closed</value>
+						</literalValue>
+					</visualizationCondition>
+				</visualizationConditions>
+			</visualizationRule>
+		</visualizationRules>
+		<label>Incidentgegevens</label>
+		<fieldGroup layoutStyle="Simple" groupPositioning="Vertical" name="IncidentFieldGroup1">
+			<textField visualizationHint="SingleLine" casing="None" required="true" name="IncidentSchadeNummer" isReadOnly="true">
+				<emptyMessage>Incidentnummer is niet ingevuld.</emptyMessage>
+				<errorMessage>Incidentnummer bevat een ongeldige waarde.</errorMessage>
+				<label>Incidentnummer</label>
+				<input name="inputIncidentSchadeNummer" value="1000002" delta="Unchanged" />
+				<maxLength>50</maxLength>
+				<maxLengthMessage>Incidentnummer mag niet groter zijn dan 50.</maxLengthMessage>
+			</textField>
+			<codeListField visualizationHint="FilteringSelectBox" multiSelect="false" hideEmptyValue="false" skipRequiredValidation="true" name="IncidentGebeurtenisCode">
+				<errorMessage>Gebeurtenis bevat een ongeldige waarde.</errorMessage>
+				<label>Gebeurtenis</label>
+				<input name="inputIncidentGebeurtenisCode" value="10" delta="Unchanged">
+					<allowedValue name="inputIncidentGebeurtenisCode_1" externalValue="" internalValue="" />
+					<allowedValue name="inputIncidentGebeurtenisCode_2" externalValue="Aanrijding/aanvaring/luchtverkeer" internalValue="10" selected="true" />
+					<allowedValue name="inputIncidentGebeurtenisCode_3" externalValue="Annulering" internalValue="20" />
+					<allowedValue name="inputIncidentGebeurtenisCode_4" externalValue="Bliksem/inductie" internalValue="4" />
+					<allowedValue name="inputIncidentGebeurtenisCode_5" externalValue="Brand" internalValue="1" />
+					<allowedValue name="inputIncidentGebeurtenisCode_6" externalValue="Diefstal/inbraak" internalValue="8" />
+					<allowedValue name="inputIncidentGebeurtenisCode_7" externalValue="Glas-/ruitbreuk" internalValue="12" />
+					<allowedValue name="inputIncidentGebeurtenisCode_8" externalValue="Later vertrek/aankomstvertraging" internalValue="21" />
+					<allowedValue name="inputIncidentGebeurtenisCode_9" externalValue="Leidingwater" internalValue="6" />
+					<allowedValue name="inputIncidentGebeurtenisCode_10" externalValue="Neerslag" internalValue="5" />
+					<allowedValue name="inputIncidentGebeurtenisCode_11" externalValue="Ongeval" internalValue="16" />
+					<allowedValue name="inputIncidentGebeurtenisCode_12" externalValue="Ontploffing" internalValue="3" />
+					<allowedValue name="inputIncidentGebeurtenisCode_13" externalValue="Opzet en relletjes" internalValue="14" />
+					<allowedValue name="inputIncidentGebeurtenisCode_14" externalValue="Overige" internalValue="ZZ" />
+					<allowedValue name="inputIncidentGebeurtenisCode_15" externalValue="Rioolwater door verstopping binnengedrongen" internalValue="7" />
+					<allowedValue name="inputIncidentGebeurtenisCode_16" externalValue="Rook en roet (geen brand)" internalValue="11" />
+					<allowedValue name="inputIncidentGebeurtenisCode_17" externalValue="Schade aan logiesverblijf" internalValue="18" />
+					<allowedValue name="inputIncidentGebeurtenisCode_18" externalValue="Schroeien, zengen, smelten" internalValue="2" />
+					<allowedValue name="inputIncidentGebeurtenisCode_19" externalValue="Storm" internalValue="9" />
+					<allowedValue name="inputIncidentGebeurtenisCode_20" externalValue="Uitval van vervoer/verblijf" internalValue="19" />
+					<allowedValue name="inputIncidentGebeurtenisCode_21" externalValue="Vandalisme en aanverwant" internalValue="13" />
+					<allowedValue name="inputIncidentGebeurtenisCode_22" externalValue="Voortijdige terugkeer" internalValue="22" />
+					<allowedValue name="inputIncidentGebeurtenisCode_23" externalValue="Zaakschade" internalValue="15" />
+					<allowedValue name="inputIncidentGebeurtenisCode_24" externalValue="Ziekte" internalValue="17" />
+				</input>
+			</codeListField>
+			<codeListField visualizationHint="FilteringSelectBox" multiSelect="false" hideEmptyValue="false" skipRequiredValidation="true" navigationValue="toSelectCause" name="SchadeOorzaakCode">
+				<submit responseType="Complete" submitType="All" />
+				<errorMessage>Schadeoorzaak bevat een ongeldige waarde.</errorMessage>
+				<label>Schadeoorzaak</label>
+				<input name="inputSchadeOorzaakCode" value="110" delta="Unchanged">
+					<allowedValue name="inputSchadeOorzaakCode_1" externalValue="" internalValue="" />
+					<allowedValue name="inputSchadeOorzaakCode_2" externalValue="Aanrijding" internalValue="110" selected="true" />
+					<allowedValue name="inputSchadeOorzaakCode_3" externalValue="Aanrijding met ander vast object" internalValue="114" />
+					<allowedValue name="inputSchadeOorzaakCode_4" externalValue="Aanrijding met loslopende/-vliegende dieren" internalValue="116" />
+					<allowedValue name="inputSchadeOorzaakCode_5" externalValue="Aanrijding met vervoerde personen" internalValue="115" />
+					<allowedValue name="inputSchadeOorzaakCode_6" externalValue="Aanrijding met voertuig" internalValue="111" />
+					<allowedValue name="inputSchadeOorzaakCode_7" externalValue="Aanrijding met voetganger/fietser" internalValue="112" />
+					<allowedValue name="inputSchadeOorzaakCode_8" externalValue="Aanrijding met wegmeubilair" internalValue="113" />
+					<allowedValue name="inputSchadeOorzaakCode_9" externalValue="Aansprakelijkheid" internalValue="900" />
+					<allowedValue name="inputSchadeOorzaakCode_10" externalValue="Aanvaring" internalValue="120" />
+					<allowedValue name="inputSchadeOorzaakCode_11" externalValue="Aanvaring met objecten" internalValue="122" />
+					<allowedValue name="inputSchadeOorzaakCode_12" externalValue="Aanvaring met schip" internalValue="121" />
+					<allowedValue name="inputSchadeOorzaakCode_13" externalValue="Acceptatie vals geld" internalValue="341" />
+					<allowedValue name="inputSchadeOorzaakCode_14" externalValue="Afpersing" internalValue="340" />
+					<allowedValue name="inputSchadeOorzaakCode_15" externalValue="Annulering" internalValue="550" />
+					<allowedValue name="inputSchadeOorzaakCode_16" externalValue="Arbeid" internalValue="870" />
+					<allowedValue name="inputSchadeOorzaakCode_17" externalValue="Arbeid &amp; Sociaal" internalValue="704" />
+					<allowedValue name="inputSchadeOorzaakCode_18" externalValue="Bagage beschadigd" internalValue="501" />
+					<allowedValue name="inputSchadeOorzaakCode_19" externalValue="Beroving" internalValue="330" />
+					<allowedValue name="inputSchadeOorzaakCode_20" externalValue="Blijvende invaliditeit" internalValue="520" />
+					<allowedValue name="inputSchadeOorzaakCode_21" externalValue="Bliksem inslag" internalValue="450" />
+					<allowedValue name="inputSchadeOorzaakCode_22" externalValue="Brand" internalValue="210" />
+					<allowedValue name="inputSchadeOorzaakCode_23" externalValue="Brand algemeen" internalValue="200" />
+					<allowedValue name="inputSchadeOorzaakCode_24" externalValue="Breuk aquarium" internalValue="251" />
+					<allowedValue name="inputSchadeOorzaakCode_25" externalValue="Contractueel" internalValue="701" />
+					<allowedValue name="inputSchadeOorzaakCode_26" externalValue="Diefstal algemeen" internalValue="300" />
+					<allowedValue name="inputSchadeOorzaakCode_27" externalValue="Diefstal van het gehele object" internalValue="311" />
+					<allowedValue name="inputSchadeOorzaakCode_28" externalValue="Diefstal van onderdelen" internalValue="312" />
+					<allowedValue name="inputSchadeOorzaakCode_29" externalValue="Diefstal wasgoed uit tuin" internalValue="318" />
+					<allowedValue name="inputSchadeOorzaakCode_30" externalValue="Diefstal/inbraak" internalValue="310" />
+					<allowedValue name="inputSchadeOorzaakCode_31" externalValue="Diefstal/inbraak uit auto" internalValue="317" />
+					<allowedValue name="inputSchadeOorzaakCode_32" externalValue="Diefstal/inbraak uit bijgebouw met braaksporen" internalValue="313" />
+					<allowedValue name="inputSchadeOorzaakCode_33" externalValue="Diefstal/inbraak uit bijgebouw zonder braaksporen" internalValue="314" />
+					<allowedValue name="inputSchadeOorzaakCode_34" externalValue="Diefstal/inbraak uit tuin/kelder met braaksporen" internalValue="315" />
+					<allowedValue name="inputSchadeOorzaakCode_35" externalValue="Diefstal/inbraak uit tuin/kelder zonder braakspore" internalValue="316" />
+					<allowedValue name="inputSchadeOorzaakCode_36" externalValue="Diverse kosten" internalValue="540" />
+					<allowedValue name="inputSchadeOorzaakCode_37" externalValue="Door dieren" internalValue="920" />
+					<allowedValue name="inputSchadeOorzaakCode_38" externalValue="Door natuurlijke persoon" internalValue="910" />
+					<allowedValue name="inputSchadeOorzaakCode_39" externalValue="Door onroerend goed" internalValue="930" />
+					<allowedValue name="inputSchadeOorzaakCode_40" externalValue="Dopor geleverd produkt/dienst" internalValue="940" />
+					<allowedValue name="inputSchadeOorzaakCode_41" externalValue="Eigen gebrek van voer-/vaartuig" internalValue="130" />
+					<allowedValue name="inputSchadeOorzaakCode_42" externalValue="Geneeskundige behandeling" internalValue="530" />
+					<allowedValue name="inputSchadeOorzaakCode_43" externalValue="Hagel" internalValue="410" />
+					<allowedValue name="inputSchadeOorzaakCode_44" externalValue="Huis, tuin &amp; keuken" internalValue="850" />
+					<allowedValue name="inputSchadeOorzaakCode_45" externalValue="Inductie" internalValue="211" />
+					<allowedValue name="inputSchadeOorzaakCode_46" externalValue="Inductie" internalValue="451" />
+					<allowedValue name="inputSchadeOorzaakCode_47" externalValue="Joy-riding" internalValue="320" />
+					<allowedValue name="inputSchadeOorzaakCode_48" externalValue="Klein molest" internalValue="620" />
+					<allowedValue name="inputSchadeOorzaakCode_49" externalValue="Kraan/stelling" internalValue="271" />
+					<allowedValue name="inputSchadeOorzaakCode_50" externalValue="Milieu" internalValue="830" />
+					<allowedValue name="inputSchadeOorzaakCode_51" externalValue="Molest" internalValue="600" />
+					<allowedValue name="inputSchadeOorzaakCode_52" externalValue="Nautische aanvaring" internalValue="123" />
+					<allowedValue name="inputSchadeOorzaakCode_53" externalValue="Olie/water" internalValue="250" />
+					<allowedValue name="inputSchadeOorzaakCode_54" externalValue="Onbekende oorzaak/overige" internalValue="950" />
+					<allowedValue name="inputSchadeOorzaakCode_55" externalValue="Ontploffen" internalValue="230" />
+					<allowedValue name="inputSchadeOorzaakCode_56" externalValue="Opstal" internalValue="820" />
+					<allowedValue name="inputSchadeOorzaakCode_57" externalValue="Overig juridisch" internalValue="707" />
+					<allowedValue name="inputSchadeOorzaakCode_58" externalValue="Overige vernielingen" internalValue="630" />
+					<allowedValue name="inputSchadeOorzaakCode_59" externalValue="Overlijden" internalValue="510" />
+					<allowedValue name="inputSchadeOorzaakCode_60" externalValue="Overstroming" internalValue="440" />
+					<allowedValue name="inputSchadeOorzaakCode_61" externalValue="Overval" internalValue="350" />
+					<allowedValue name="inputSchadeOorzaakCode_62" externalValue="Personen &amp; Familie &amp; Erfrecht" internalValue="706" />
+					<allowedValue name="inputSchadeOorzaakCode_63" externalValue="Reis" internalValue="500" />
+					<allowedValue name="inputSchadeOorzaakCode_64" externalValue="Rook en roet" internalValue="240" />
+					<allowedValue name="inputSchadeOorzaakCode_65" externalValue="Ruitbreuk" internalValue="800" />
+					<allowedValue name="inputSchadeOorzaakCode_66" externalValue="Schroeien, smelten, zengen" internalValue="220" />
+					<allowedValue name="inputSchadeOorzaakCode_67" externalValue="Spiegelbreuk" internalValue="801" />
+					<allowedValue name="inputSchadeOorzaakCode_68" externalValue="Sport &amp; Spel" internalValue="840" />
+					<allowedValue name="inputSchadeOorzaakCode_69" externalValue="Storm" internalValue="420" />
+					<allowedValue name="inputSchadeOorzaakCode_70" externalValue="Takelschade" internalValue="272" />
+					<allowedValue name="inputSchadeOorzaakCode_71" externalValue="Technische storing" internalValue="212" />
+					<allowedValue name="inputSchadeOorzaakCode_72" externalValue="Tewaterraking" internalValue="142" />
+					<allowedValue name="inputSchadeOorzaakCode_73" externalValue="Uitvallen koeling" internalValue="260" />
+					<allowedValue name="inputSchadeOorzaakCode_74" externalValue="Vallen/stoten" internalValue="270" />
+					<allowedValue name="inputSchadeOorzaakCode_75" externalValue="Vallend voorwerp" internalValue="141" />
+					<allowedValue name="inputSchadeOorzaakCode_76" externalValue="Vallende antenne" internalValue="273" />
+					<allowedValue name="inputSchadeOorzaakCode_77" externalValue="Van buiten komend onheil" internalValue="390" />
+					<allowedValue name="inputSchadeOorzaakCode_78" externalValue="Vandalisme" internalValue="610" />
+					<allowedValue name="inputSchadeOorzaakCode_79" externalValue="Verduistering" internalValue="360" />
+					<allowedValue name="inputSchadeOorzaakCode_80" externalValue="Verhaalschade binnen verkeer; materieel/letsel" internalValue="702" />
+					<allowedValue name="inputSchadeOorzaakCode_81" externalValue="Verhaalschade buiten verkeer; materieel/letsel" internalValue="703" />
+					<allowedValue name="inputSchadeOorzaakCode_82" externalValue="Verkeer algemeen" internalValue="100" />
+					<allowedValue name="inputSchadeOorzaakCode_83" externalValue="Verkeersongeval" internalValue="117" />
+					<allowedValue name="inputSchadeOorzaakCode_84" externalValue="Verlies" internalValue="370" />
+					<allowedValue name="inputSchadeOorzaakCode_85" externalValue="Vermissing" internalValue="380" />
+					<allowedValue name="inputSchadeOorzaakCode_86" externalValue="Vliegtuigschade" internalValue="140" />
+					<allowedValue name="inputSchadeOorzaakCode_87" externalValue="Voertuig" internalValue="810" />
+					<allowedValue name="inputSchadeOorzaakCode_88" externalValue="Vorst" internalValue="460" />
+					<allowedValue name="inputSchadeOorzaakCode_89" externalValue="Vriendendienst" internalValue="860" />
+					<allowedValue name="inputSchadeOorzaakCode_90" externalValue="Water/neerslag" internalValue="430" />
+					<allowedValue name="inputSchadeOorzaakCode_91" externalValue="Weersomstandigheden" internalValue="400" />
+					<allowedValue name="inputSchadeOorzaakCode_92" externalValue="Wonen &amp; Onroerende Zaken" internalValue="705" />
+					<allowedValue name="inputSchadeOorzaakCode_93" externalValue="Zinken/stranden/zwaar weer" internalValue="124" />
+				</input>
+			</codeListField>
+			<codeListField visualizationHint="FilteringSelectBox" multiSelect="false" hideEmptyValue="false" name="CatastrofeCode1">
+				<visualizationRules>
+					<visualizationRule>
+						<visualizationAssignment>
+							<left>
+								<value>CatastrofeCode1</value>
+							</left>
+							<visualizationValueReadWrite />
+						</visualizationAssignment>
+						<visualizationConditions>
+							<visualizationCondition>
+								<relationalOperatorEqualsTo />
+								<left>
+									<value>Status</value>
+								</left>
+								<literalValue>
+									<value>Closed</value>
+								</literalValue>
+							</visualizationCondition>
+						</visualizationConditions>
+					</visualizationRule>
+				</visualizationRules>
+				<errorMessage>Catastrofe bevat een ongeldige waarde.</errorMessage>
+				<label>Catastrofe</label>
+				<input name="inputCatastrofeCode1" delta="Unchanged">
+					<allowedValue name="inputCatastrofeCode1_1" externalValue="" internalValue="" selected="true" />
+				</input>
+			</codeListField>
+			<codeListField visualizationHint="FilteringSelectBox" multiSelect="false" hideEmptyValue="false" skipRequiredValidation="true" name="OVSCode">
+				<submit responseType="Complete" submitType="All" />
+				<errorMessage>OVS-Code bevat een ongeldige waarde.</errorMessage>
+				<label>OVS-Code</label>
+				<input name="inputOVSCode" delta="Unchanged">
+					<allowedValue name="inputOVSCode_1" externalValue="1. Botsing tijdens of na een bijzondere verrichting" internalValue="1" />
+					<allowedValue name="inputOVSCode_2" externalValue="2. Botsing op een kruispunt" internalValue="2" />
+					<allowedValue name="inputOVSCode_3" externalValue="3a. Enkelvoudige kop-staart botsing" internalValue="3A" />
+					<allowedValue name="inputOVSCode_4" externalValue="3b. Kettingbotsing" internalValue="3B" />
+					<allowedValue name="inputOVSCode_5" externalValue="4a. Botsing tussen elkaar tegemoet rijdende motorrijtuigen" internalValue="4" />
+					<allowedValue name="inputOVSCode_6" externalValue="5. Botsing tussen een rijdend en een geparkeerd motorrijtuig" internalValue="5" />
+					<allowedValue name="inputOVSCode_7" externalValue="6. Botsing die niet valt onder 1 tot en met 5" internalValue="6" />
+				</input>
+			</codeListField>
+		</fieldGroup>
+	</formGroup>
+	<formGroup visualizationHint="Fixed" name="IncidentOmschrijvingGegevens">
+		<label>Incidentomschrijving</label>
+		<textField visualizationHint="MultiLine" casing="None" name="IncidentOmschrijving">
+			<errorMessage>Omschrijving bevat een ongeldige waarde.</errorMessage>
+			<label>Omschrijving</label>
+			<input name="inputIncidentOmschrijving" cols="350" rows="50" size="1000" delta="Unchanged" />
+			<maxLength>255</maxLength>
+			<maxLengthMessage>Omschrijving mag niet groter zijn dan 255.</maxLengthMessage>
+		</textField>
+	</formGroup>
+	<formGroup visualizationHint="Fixed" name="IncidentLocatieGegevens">
+		<label>Incidentlocatiegegevens</label>
+		<textField visualizationHint="MultiLine" casing="None" name="IncidentLocatieAdresLocatie">
+			<errorMessage>Omschrijving locatie bevat een ongeldige waarde.</errorMessage>
+			<label>Omschrijving locatie</label>
+			<input name="inputIncidentLocatieAdresLocatie" cols="350" rows="50" size="1000" delta="Unchanged" />
+			<maxLength>255</maxLength>
+			<maxLengthMessage>Omschrijving locatie mag niet groter zijn dan 255.</maxLengthMessage>
+		</textField>
+		<textField visualizationHint="SingleLine" casing="CapitalizeFirstLetter" name="IncidentLocatieStraat">
+			<errorMessage>Straat bevat een ongeldige waarde.</errorMessage>
+			<label>Straat</label>
+			<input name="inputIncidentLocatieStraat" delta="Unchanged" />
+			<maxLength>50</maxLength>
+			<maxLengthMessage>Straat mag niet groter zijn dan 50.</maxLengthMessage>
+		</textField>
+		<integerField visualizationHint="NumberTextBox" name="IncidentLocatieNummer">
+			<errorMessage>Huisnummer bevat een ongeldige waarde.</errorMessage>
+			<label>Huisnummer</label>
+			<input name="inputIncidentLocatieNummer" delta="Unchanged" />
+			<minValue>1</minValue>
+			<minValueMessage>Huisnummer mag niet kleiner zijn dan 1.</minValueMessage>
+		</integerField>
+		<textField visualizationHint="SingleLine" casing="None" name="IncidentLocatieNummerToevoeging">
+			<errorMessage>Huisnummertoevoeging bevat een ongeldige waarde.</errorMessage>
+			<label>Huisnummertoevoeging</label>
+			<input name="inputIncidentLocatieNummerToevoeging" delta="Unchanged" />
+			<maxLength>10</maxLength>
+			<maxLengthMessage>Huisnummertoevoeging mag niet groter zijn dan 10.</maxLengthMessage>
+		</textField>
+		<textField visualizationHint="SingleLine" casing="UpperCase" name="IncidentLocationPostalCode">
+			<errorMessage>Postcode bevat een ongeldige waarde.</errorMessage>
+			<label>Postcode</label>
+			<input name="inputIncidentLocationPostalCode" delta="Unchanged" />
+			<maxLength>10</maxLength>
+			<maxLengthMessage>Postcode mag niet groter zijn dan 10.</maxLengthMessage>
+		</textField>
+		<textField visualizationHint="SingleLine" casing="None" name="IncidentLocationCity">
+			<errorMessage>Plaats bevat een ongeldige waarde.</errorMessage>
+			<label>Plaats</label>
+			<input name="inputIncidentLocationCity" delta="Unchanged" />
+			<maxLength>100</maxLength>
+			<maxLengthMessage>Plaats mag niet groter zijn dan 100.</maxLengthMessage>
+		</textField>
+		<codeListField visualizationHint="FilteringSelectBox" multiSelect="false" hideEmptyValue="false" name="IncidentLocatieLandCode">
+			<errorMessage>Land bevat een ongeldige waarde.</errorMessage>
+			<label>Land</label>
+			<input name="inputIncidentLocatieLandCode" delta="Unchanged">
+				<allowedValue name="inputIncidentLocatieLandCode_1" externalValue="" internalValue="" selected="true" />
+				<allowedValue name="inputIncidentLocatieLandCode_2" externalValue="Aaland eilanden" internalValue="AX" />
+				<allowedValue name="inputIncidentLocatieLandCode_3" externalValue="Afghanistan" internalValue="AF" />
+				<allowedValue name="inputIncidentLocatieLandCode_4" externalValue="Albanië" internalValue="AL" />
+				<allowedValue name="inputIncidentLocatieLandCode_5" externalValue="Algerije" internalValue="DZ" />
+				<allowedValue name="inputIncidentLocatieLandCode_6" externalValue="Amerikaans Samoa" internalValue="AS" />
+				<allowedValue name="inputIncidentLocatieLandCode_7" externalValue="Amerikaanse Maagdeneilanden" internalValue="VI" />
+				<allowedValue name="inputIncidentLocatieLandCode_8" externalValue="Anders" internalValue="ZZ" />
+				<allowedValue name="inputIncidentLocatieLandCode_9" externalValue="Andorra" internalValue="AD" />
+				<allowedValue name="inputIncidentLocatieLandCode_10" externalValue="Angola" internalValue="AO" />
+				<allowedValue name="inputIncidentLocatieLandCode_11" externalValue="Anguilla" internalValue="AI" />
+				<allowedValue name="inputIncidentLocatieLandCode_12" externalValue="Antartica" internalValue="AQ" />
+				<allowedValue name="inputIncidentLocatieLandCode_13" externalValue="Antigua en Barbuda" internalValue="AG" />
+				<allowedValue name="inputIncidentLocatieLandCode_14" externalValue="Argentinië" internalValue="AR" />
+				<allowedValue name="inputIncidentLocatieLandCode_15" externalValue="Armenië" internalValue="AM" />
+				<allowedValue name="inputIncidentLocatieLandCode_16" externalValue="Aruba" internalValue="AW" />
+				<allowedValue name="inputIncidentLocatieLandCode_17" externalValue="Australië" internalValue="AU" />
+				<allowedValue name="inputIncidentLocatieLandCode_18" externalValue="Azerbeidzjan" internalValue="AZ" />
+				<allowedValue name="inputIncidentLocatieLandCode_19" externalValue="Bahamas" internalValue="BS" />
+				<allowedValue name="inputIncidentLocatieLandCode_20" externalValue="Bahrein" internalValue="BH" />
+				<allowedValue name="inputIncidentLocatieLandCode_21" externalValue="Bangladesh" internalValue="BD" />
+				<allowedValue name="inputIncidentLocatieLandCode_22" externalValue="Barbados" internalValue="BB" />
+				<allowedValue name="inputIncidentLocatieLandCode_23" externalValue="België" internalValue="BE" />
+				<allowedValue name="inputIncidentLocatieLandCode_24" externalValue="Belize" internalValue="BZ" />
+				<allowedValue name="inputIncidentLocatieLandCode_25" externalValue="Benin" internalValue="BJ" />
+				<allowedValue name="inputIncidentLocatieLandCode_26" externalValue="Bermuda" internalValue="BM" />
+				<allowedValue name="inputIncidentLocatieLandCode_27" externalValue="Bhutan" internalValue="BT" />
+				<allowedValue name="inputIncidentLocatieLandCode_28" externalValue="Bolivia" internalValue="BO" />
+				<allowedValue name="inputIncidentLocatieLandCode_29" externalValue="Bonaire, Sint Eustatius en Saba" internalValue="BQ" />
+				<allowedValue name="inputIncidentLocatieLandCode_30" externalValue="Bosnië Herzegovina" internalValue="BA" />
+				<allowedValue name="inputIncidentLocatieLandCode_31" externalValue="Botswana" internalValue="BW" />
+				<allowedValue name="inputIncidentLocatieLandCode_32" externalValue="Bouvet Island" internalValue="BV" />
+				<allowedValue name="inputIncidentLocatieLandCode_33" externalValue="Brazilië" internalValue="BR" />
+				<allowedValue name="inputIncidentLocatieLandCode_34" externalValue="British Indian Ocean Territory" internalValue="IO" />
+				<allowedValue name="inputIncidentLocatieLandCode_35" externalValue="Britse Maagdeneilanden" internalValue="VG" />
+				<allowedValue name="inputIncidentLocatieLandCode_36" externalValue="Brunei Darussalam" internalValue="BN" />
+				<allowedValue name="inputIncidentLocatieLandCode_37" externalValue="Bulgarije" internalValue="BG" />
+				<allowedValue name="inputIncidentLocatieLandCode_38" externalValue="Burkina Faso" internalValue="BF" />
+				<allowedValue name="inputIncidentLocatieLandCode_39" externalValue="Burundi" internalValue="BI" />
+				<allowedValue name="inputIncidentLocatieLandCode_40" externalValue="Cambodja" internalValue="KH" />
+				<allowedValue name="inputIncidentLocatieLandCode_41" externalValue="Canada" internalValue="CA" />
+				<allowedValue name="inputIncidentLocatieLandCode_42" externalValue="Centraal Afrikaanse Republiek" internalValue="CF" />
+				<allowedValue name="inputIncidentLocatieLandCode_43" externalValue="Chili" internalValue="CL" />
+				<allowedValue name="inputIncidentLocatieLandCode_44" externalValue="China" internalValue="CN" />
+				<allowedValue name="inputIncidentLocatieLandCode_45" externalValue="Christmas Island" internalValue="CX" />
+				<allowedValue name="inputIncidentLocatieLandCode_46" externalValue="Cocos Eilanden" internalValue="CC" />
+				<allowedValue name="inputIncidentLocatieLandCode_47" externalValue="Colombia" internalValue="CO" />
+				<allowedValue name="inputIncidentLocatieLandCode_48" externalValue="Comores" internalValue="KM" />
+				<allowedValue name="inputIncidentLocatieLandCode_49" externalValue="Cook Eilanden" internalValue="CK" />
+				<allowedValue name="inputIncidentLocatieLandCode_50" externalValue="Costa Rica" internalValue="CR" />
+				<allowedValue name="inputIncidentLocatieLandCode_51" externalValue="Cuba" internalValue="CU" />
+				<allowedValue name="inputIncidentLocatieLandCode_52" externalValue="Curacao" internalValue="CW" />
+				<allowedValue name="inputIncidentLocatieLandCode_53" externalValue="Cyprus" internalValue="CY" />
+				<allowedValue name="inputIncidentLocatieLandCode_54" externalValue="Democratische Republiek Congo" internalValue="CD" />
+				<allowedValue name="inputIncidentLocatieLandCode_55" externalValue="Denemarken" internalValue="DK" />
+				<allowedValue name="inputIncidentLocatieLandCode_56" externalValue="Djibouti" internalValue="DJ" />
+				<allowedValue name="inputIncidentLocatieLandCode_57" externalValue="Dominica" internalValue="DM" />
+				<allowedValue name="inputIncidentLocatieLandCode_58" externalValue="Dominicaanse Republiek" internalValue="DO" />
+				<allowedValue name="inputIncidentLocatieLandCode_59" externalValue="Duitsland" internalValue="DE" />
+				<allowedValue name="inputIncidentLocatieLandCode_60" externalValue="Ecuador" internalValue="EC" />
+				<allowedValue name="inputIncidentLocatieLandCode_61" externalValue="Egypte" internalValue="EG" />
+				<allowedValue name="inputIncidentLocatieLandCode_62" externalValue="El Salvador" internalValue="SV" />
+				<allowedValue name="inputIncidentLocatieLandCode_63" externalValue="Equatorial Guinea" internalValue="GQ" />
+				<allowedValue name="inputIncidentLocatieLandCode_64" externalValue="Eritrea" internalValue="ER" />
+				<allowedValue name="inputIncidentLocatieLandCode_65" externalValue="Estland" internalValue="EE" />
+				<allowedValue name="inputIncidentLocatieLandCode_66" externalValue="Ethiopië" internalValue="ET" />
+				<allowedValue name="inputIncidentLocatieLandCode_67" externalValue="Falkland Eilanden" internalValue="FK" />
+				<allowedValue name="inputIncidentLocatieLandCode_68" externalValue="Faroer Eilanden" internalValue="FO" />
+				<allowedValue name="inputIncidentLocatieLandCode_69" externalValue="Fiji" internalValue="FJ" />
+				<allowedValue name="inputIncidentLocatieLandCode_70" externalValue="Filipijnen" internalValue="PH" />
+				<allowedValue name="inputIncidentLocatieLandCode_71" externalValue="Finland" internalValue="FI" />
+				<allowedValue name="inputIncidentLocatieLandCode_72" externalValue="Frankrijk" internalValue="FR" />
+				<allowedValue name="inputIncidentLocatieLandCode_73" externalValue="Frans Guyana" internalValue="GF" />
+				<allowedValue name="inputIncidentLocatieLandCode_74" externalValue="Frans Polynesië" internalValue="PF" />
+				<allowedValue name="inputIncidentLocatieLandCode_75" externalValue="Franse Zuidelijke Territories" internalValue="TF" />
+				<allowedValue name="inputIncidentLocatieLandCode_76" externalValue="Gabon" internalValue="GA" />
+				<allowedValue name="inputIncidentLocatieLandCode_77" externalValue="Gambia" internalValue="GM" />
+				<allowedValue name="inputIncidentLocatieLandCode_78" externalValue="Georgië" internalValue="GE" />
+				<allowedValue name="inputIncidentLocatieLandCode_79" externalValue="Ghana" internalValue="GH" />
+				<allowedValue name="inputIncidentLocatieLandCode_80" externalValue="Gibraltar" internalValue="GI" />
+				<allowedValue name="inputIncidentLocatieLandCode_81" externalValue="Grenada" internalValue="GD" />
+				<allowedValue name="inputIncidentLocatieLandCode_82" externalValue="Griekenland" internalValue="GR" />
+				<allowedValue name="inputIncidentLocatieLandCode_83" externalValue="Groenland" internalValue="GL" />
+				<allowedValue name="inputIncidentLocatieLandCode_84" externalValue="Guadeloupe" internalValue="GP" />
+				<allowedValue name="inputIncidentLocatieLandCode_85" externalValue="Guam" internalValue="GU" />
+				<allowedValue name="inputIncidentLocatieLandCode_86" externalValue="Guatemala" internalValue="GT" />
+				<allowedValue name="inputIncidentLocatieLandCode_87" externalValue="Guernsey" internalValue="GG" />
+				<allowedValue name="inputIncidentLocatieLandCode_88" externalValue="Guinea" internalValue="GN" />
+				<allowedValue name="inputIncidentLocatieLandCode_89" externalValue="Guinea-Bissau" internalValue="GW" />
+				<allowedValue name="inputIncidentLocatieLandCode_90" externalValue="Guyana" internalValue="GY" />
+				<allowedValue name="inputIncidentLocatieLandCode_91" externalValue="Haiti" internalValue="HT" />
+				<allowedValue name="inputIncidentLocatieLandCode_92" externalValue="Heard Eiland en McDonald Eilanden" internalValue="HM" />
+				<allowedValue name="inputIncidentLocatieLandCode_93" externalValue="Honduras" internalValue="HN" />
+				<allowedValue name="inputIncidentLocatieLandCode_94" externalValue="Hongarije" internalValue="HU" />
+				<allowedValue name="inputIncidentLocatieLandCode_95" externalValue="Hongkong" internalValue="HK" />
+				<allowedValue name="inputIncidentLocatieLandCode_96" externalValue="Ierland" internalValue="IE" />
+				<allowedValue name="inputIncidentLocatieLandCode_97" externalValue="IJsland" internalValue="IS" />
+				<allowedValue name="inputIncidentLocatieLandCode_98" externalValue="India" internalValue="IN" />
+				<allowedValue name="inputIncidentLocatieLandCode_99" externalValue="Indonesië" internalValue="ID" />
+				<allowedValue name="inputIncidentLocatieLandCode_100" externalValue="Irak" internalValue="IQ" />
+				<allowedValue name="inputIncidentLocatieLandCode_101" externalValue="Iran" internalValue="IR" />
+				<allowedValue name="inputIncidentLocatieLandCode_102" externalValue="Isle of Man" internalValue="IM" />
+				<allowedValue name="inputIncidentLocatieLandCode_103" externalValue="Israël" internalValue="IL" />
+				<allowedValue name="inputIncidentLocatieLandCode_104" externalValue="Italië" internalValue="IT" />
+				<allowedValue name="inputIncidentLocatieLandCode_105" externalValue="Ivoorkust" internalValue="CI" />
+				<allowedValue name="inputIncidentLocatieLandCode_106" externalValue="Jamaica" internalValue="JM" />
+				<allowedValue name="inputIncidentLocatieLandCode_107" externalValue="Japan" internalValue="JP" />
+				<allowedValue name="inputIncidentLocatieLandCode_108" externalValue="Jersey" internalValue="JE" />
+				<allowedValue name="inputIncidentLocatieLandCode_109" externalValue="Jordanië" internalValue="JO" />
+				<allowedValue name="inputIncidentLocatieLandCode_110" externalValue="Kaaiman Eilanden" internalValue="KY" />
+				<allowedValue name="inputIncidentLocatieLandCode_111" externalValue="Kaap Verdische Eilanden" internalValue="CV" />
+				<allowedValue name="inputIncidentLocatieLandCode_112" externalValue="Kameroen" internalValue="CM" />
+				<allowedValue name="inputIncidentLocatieLandCode_113" externalValue="Kazachstan" internalValue="KZ" />
+				<allowedValue name="inputIncidentLocatieLandCode_114" externalValue="Kenia" internalValue="KE" />
+				<allowedValue name="inputIncidentLocatieLandCode_115" externalValue="Kirgizië" internalValue="KG" />
+				<allowedValue name="inputIncidentLocatieLandCode_116" externalValue="Kiribati" internalValue="KI" />
+				<allowedValue name="inputIncidentLocatieLandCode_117" externalValue="Koeweit" internalValue="KW" />
+				<allowedValue name="inputIncidentLocatieLandCode_118" externalValue="Kroatië" internalValue="HR" />
+				<allowedValue name="inputIncidentLocatieLandCode_119" externalValue="Laos" internalValue="LA" />
+				<allowedValue name="inputIncidentLocatieLandCode_120" externalValue="Lesotho" internalValue="LS" />
+				<allowedValue name="inputIncidentLocatieLandCode_121" externalValue="Letland" internalValue="LV" />
+				<allowedValue name="inputIncidentLocatieLandCode_122" externalValue="Libanon" internalValue="LB" />
+				<allowedValue name="inputIncidentLocatieLandCode_123" externalValue="Liberia" internalValue="LR" />
+				<allowedValue name="inputIncidentLocatieLandCode_124" externalValue="Libië" internalValue="LY" />
+				<allowedValue name="inputIncidentLocatieLandCode_125" externalValue="Liechtenstein" internalValue="LI" />
+				<allowedValue name="inputIncidentLocatieLandCode_126" externalValue="Litouwen" internalValue="LT" />
+				<allowedValue name="inputIncidentLocatieLandCode_127" externalValue="Luxemburg" internalValue="LU" />
+				<allowedValue name="inputIncidentLocatieLandCode_128" externalValue="Macau" internalValue="MO" />
+				<allowedValue name="inputIncidentLocatieLandCode_129" externalValue="Macedonië" internalValue="MK" />
+				<allowedValue name="inputIncidentLocatieLandCode_130" externalValue="Madagascar" internalValue="MG" />
+				<allowedValue name="inputIncidentLocatieLandCode_131" externalValue="Malawi" internalValue="MW" />
+				<allowedValue name="inputIncidentLocatieLandCode_132" externalValue="Malediven" internalValue="MV" />
+				<allowedValue name="inputIncidentLocatieLandCode_133" externalValue="Maleisië" internalValue="MY" />
+				<allowedValue name="inputIncidentLocatieLandCode_134" externalValue="Mali" internalValue="ML" />
+				<allowedValue name="inputIncidentLocatieLandCode_135" externalValue="Malta" internalValue="MT" />
+				<allowedValue name="inputIncidentLocatieLandCode_136" externalValue="Marokko" internalValue="MA" />
+				<allowedValue name="inputIncidentLocatieLandCode_137" externalValue="Marshall Eilanden" internalValue="MH" />
+				<allowedValue name="inputIncidentLocatieLandCode_138" externalValue="Martinique" internalValue="MQ" />
+				<allowedValue name="inputIncidentLocatieLandCode_139" externalValue="Mauretanië" internalValue="MR" />
+				<allowedValue name="inputIncidentLocatieLandCode_140" externalValue="Mauritius" internalValue="MU" />
+				<allowedValue name="inputIncidentLocatieLandCode_141" externalValue="Mayotte" internalValue="YT" />
+				<allowedValue name="inputIncidentLocatieLandCode_142" externalValue="Mexico" internalValue="MX" />
+				<allowedValue name="inputIncidentLocatieLandCode_143" externalValue="Micronesië" internalValue="FM" />
+				<allowedValue name="inputIncidentLocatieLandCode_144" externalValue="Monaco" internalValue="MC" />
+				<allowedValue name="inputIncidentLocatieLandCode_145" externalValue="Mongolië" internalValue="MN" />
+				<allowedValue name="inputIncidentLocatieLandCode_146" externalValue="Montenegro" internalValue="ME" />
+				<allowedValue name="inputIncidentLocatieLandCode_147" externalValue="Montserrat" internalValue="MS" />
+				<allowedValue name="inputIncidentLocatieLandCode_148" externalValue="Mozambique" internalValue="MZ" />
+				<allowedValue name="inputIncidentLocatieLandCode_149" externalValue="Myanmar" internalValue="MM" />
+				<allowedValue name="inputIncidentLocatieLandCode_150" externalValue="Namibië" internalValue="NA" />
+				<allowedValue name="inputIncidentLocatieLandCode_151" externalValue="Nauru" internalValue="NR" />
+				<allowedValue name="inputIncidentLocatieLandCode_152" externalValue="Nederland" internalValue="NL" />
+				<allowedValue name="inputIncidentLocatieLandCode_153" externalValue="Nederlandse Antillen" internalValue="AN" />
+				<allowedValue name="inputIncidentLocatieLandCode_154" externalValue="Nepal" internalValue="NP" />
+				<allowedValue name="inputIncidentLocatieLandCode_155" externalValue="Nicaragua" internalValue="NI" />
+				<allowedValue name="inputIncidentLocatieLandCode_156" externalValue="Nieuw Caledonië" internalValue="NC" />
+				<allowedValue name="inputIncidentLocatieLandCode_157" externalValue="Nieuw Zeeland" internalValue="NZ" />
+				<allowedValue name="inputIncidentLocatieLandCode_158" externalValue="Nigeria" internalValue="NG" />
+				<allowedValue name="inputIncidentLocatieLandCode_159" externalValue="Niue" internalValue="NU" />
+				<allowedValue name="inputIncidentLocatieLandCode_160" externalValue="Noord Korea" internalValue="KP" />
+				<allowedValue name="inputIncidentLocatieLandCode_161" externalValue="Noordelijke Mariana Eilanden" internalValue="MP" />
+				<allowedValue name="inputIncidentLocatieLandCode_162" externalValue="Noorwegen" internalValue="NO" />
+				<allowedValue name="inputIncidentLocatieLandCode_163" externalValue="Norfolk Eiland" internalValue="NF" />
+				<allowedValue name="inputIncidentLocatieLandCode_164" externalValue="Oekraïne" internalValue="UA" />
+				<allowedValue name="inputIncidentLocatieLandCode_165" externalValue="Oezbekistan" internalValue="UZ" />
+				<allowedValue name="inputIncidentLocatieLandCode_166" externalValue="Oman" internalValue="OM" />
+				<allowedValue name="inputIncidentLocatieLandCode_167" externalValue="Oostenrijk" internalValue="AT" />
+				<allowedValue name="inputIncidentLocatieLandCode_168" externalValue="Pakistan" internalValue="PK" />
+				<allowedValue name="inputIncidentLocatieLandCode_169" externalValue="Palau" internalValue="PW" />
+				<allowedValue name="inputIncidentLocatieLandCode_170" externalValue="Palestina" internalValue="PS" />
+				<allowedValue name="inputIncidentLocatieLandCode_171" externalValue="Panama" internalValue="PA" />
+				<allowedValue name="inputIncidentLocatieLandCode_172" externalValue="Papua Nieuw Guinea" internalValue="PG" />
+				<allowedValue name="inputIncidentLocatieLandCode_173" externalValue="Paraguay" internalValue="PY" />
+				<allowedValue name="inputIncidentLocatieLandCode_174" externalValue="Peru" internalValue="PE" />
+				<allowedValue name="inputIncidentLocatieLandCode_175" externalValue="Pitcairn" internalValue="PN" />
+				<allowedValue name="inputIncidentLocatieLandCode_176" externalValue="Polen" internalValue="PL" />
+				<allowedValue name="inputIncidentLocatieLandCode_177" externalValue="Porto Rico" internalValue="PR" />
+				<allowedValue name="inputIncidentLocatieLandCode_178" externalValue="Portugal" internalValue="PT" />
+				<allowedValue name="inputIncidentLocatieLandCode_179" externalValue="Quatar" internalValue="QA" />
+				<allowedValue name="inputIncidentLocatieLandCode_180" externalValue="Republiek Congo" internalValue="CG" />
+				<allowedValue name="inputIncidentLocatieLandCode_181" externalValue="Republiek Moldavië" internalValue="MD" />
+				<allowedValue name="inputIncidentLocatieLandCode_182" externalValue="Republiek Niger" internalValue="NE" />
+				<allowedValue name="inputIncidentLocatieLandCode_183" externalValue="Reunion" internalValue="RE" />
+				<allowedValue name="inputIncidentLocatieLandCode_184" externalValue="Roemenië" internalValue="RO" />
+				<allowedValue name="inputIncidentLocatieLandCode_185" externalValue="Rusland" internalValue="RU" />
+				<allowedValue name="inputIncidentLocatieLandCode_186" externalValue="Rwanda" internalValue="RW" />
+				<allowedValue name="inputIncidentLocatieLandCode_187" externalValue="Samoa" internalValue="WS" />
+				<allowedValue name="inputIncidentLocatieLandCode_188" externalValue="San Marino" internalValue="SM" />
+				<allowedValue name="inputIncidentLocatieLandCode_189" externalValue="Sandwich Eilanden" internalValue="GS" />
+				<allowedValue name="inputIncidentLocatieLandCode_190" externalValue="Santa Lucia" internalValue="LC" />
+				<allowedValue name="inputIncidentLocatieLandCode_191" externalValue="Sao Tome en Principe" internalValue="ST" />
+				<allowedValue name="inputIncidentLocatieLandCode_192" externalValue="Saoedi-Arabië" internalValue="SA" />
+				<allowedValue name="inputIncidentLocatieLandCode_193" externalValue="Senegal" internalValue="SN" />
+				<allowedValue name="inputIncidentLocatieLandCode_194" externalValue="Servië" internalValue="RS" />
+				<allowedValue name="inputIncidentLocatieLandCode_195" externalValue="Servië en Montenegro" internalValue="CS" />
+				<allowedValue name="inputIncidentLocatieLandCode_196" externalValue="Seychellen" internalValue="SC" />
+				<allowedValue name="inputIncidentLocatieLandCode_197" externalValue="Sierra Leone" internalValue="SL" />
+				<allowedValue name="inputIncidentLocatieLandCode_198" externalValue="Singapore" internalValue="SG" />
+				<allowedValue name="inputIncidentLocatieLandCode_199" externalValue="Sint Bartholomeus" internalValue="BL" />
+				<allowedValue name="inputIncidentLocatieLandCode_200" externalValue="Sint Maarten (Dutch part)" internalValue="SX" />
+				<allowedValue name="inputIncidentLocatieLandCode_201" externalValue="Sint Maarten (Frans)" internalValue="MF" />
+				<allowedValue name="inputIncidentLocatieLandCode_202" externalValue="Slovenië" internalValue="SI" />
+				<allowedValue name="inputIncidentLocatieLandCode_203" externalValue="Slowakije" internalValue="SK" />
+				<allowedValue name="inputIncidentLocatieLandCode_204" externalValue="Soedan" internalValue="SD" />
+				<allowedValue name="inputIncidentLocatieLandCode_205" externalValue="Solomon Eilanden" internalValue="SB" />
+				<allowedValue name="inputIncidentLocatieLandCode_206" externalValue="Somalië" internalValue="SO" />
+				<allowedValue name="inputIncidentLocatieLandCode_207" externalValue="Spanje" internalValue="ES" />
+				<allowedValue name="inputIncidentLocatieLandCode_208" externalValue="Sri Lanka" internalValue="LK" />
+				<allowedValue name="inputIncidentLocatieLandCode_209" externalValue="St Helena" internalValue="SH" />
+				<allowedValue name="inputIncidentLocatieLandCode_210" externalValue="St Kitts en Nevis" internalValue="KN" />
+				<allowedValue name="inputIncidentLocatieLandCode_211" externalValue="St Pierre en Miquelon" internalValue="PM" />
+				<allowedValue name="inputIncidentLocatieLandCode_212" externalValue="St Vincent en Grenada" internalValue="VC" />
+				<allowedValue name="inputIncidentLocatieLandCode_213" externalValue="Suriname" internalValue="SR" />
+				<allowedValue name="inputIncidentLocatieLandCode_214" externalValue="Svalbard en Jan Mayen" internalValue="SJ" />
+				<allowedValue name="inputIncidentLocatieLandCode_215" externalValue="Swaziland" internalValue="SZ" />
+				<allowedValue name="inputIncidentLocatieLandCode_216" externalValue="Syrië" internalValue="SY" />
+				<allowedValue name="inputIncidentLocatieLandCode_217" externalValue="Tadzjikistan" internalValue="TJ" />
+				<allowedValue name="inputIncidentLocatieLandCode_218" externalValue="Taiwan" internalValue="TW" />
+				<allowedValue name="inputIncidentLocatieLandCode_219" externalValue="Tanzania" internalValue="TZ" />
+				<allowedValue name="inputIncidentLocatieLandCode_220" externalValue="Thailand" internalValue="TH" />
+				<allowedValue name="inputIncidentLocatieLandCode_221" externalValue="Timor Leste" internalValue="TL" />
+				<allowedValue name="inputIncidentLocatieLandCode_222" externalValue="Togo" internalValue="TG" />
+				<allowedValue name="inputIncidentLocatieLandCode_223" externalValue="Tokelau" internalValue="TK" />
+				<allowedValue name="inputIncidentLocatieLandCode_224" externalValue="Tonga" internalValue="TO" />
+				<allowedValue name="inputIncidentLocatieLandCode_225" externalValue="Trinidad en Tobago" internalValue="TT" />
+				<allowedValue name="inputIncidentLocatieLandCode_226" externalValue="Tsjaad" internalValue="TD" />
+				<allowedValue name="inputIncidentLocatieLandCode_227" externalValue="Tsjechië" internalValue="CZ" />
+				<allowedValue name="inputIncidentLocatieLandCode_228" externalValue="Tunesië" internalValue="TN" />
+				<allowedValue name="inputIncidentLocatieLandCode_229" externalValue="Turkije" internalValue="TR" />
+				<allowedValue name="inputIncidentLocatieLandCode_230" externalValue="Turkmenistan" internalValue="TM" />
+				<allowedValue name="inputIncidentLocatieLandCode_231" externalValue="Turks en Caicos Eilanden" internalValue="TC" />
+				<allowedValue name="inputIncidentLocatieLandCode_232" externalValue="Tuvalu" internalValue="TV" />
+				<allowedValue name="inputIncidentLocatieLandCode_233" externalValue="Uganda" internalValue="UG" />
+				<allowedValue name="inputIncidentLocatieLandCode_234" externalValue="United States Minor Outlaying Eilanden" internalValue="UM" />
+				<allowedValue name="inputIncidentLocatieLandCode_235" externalValue="Uruguay" internalValue="UY" />
+				<allowedValue name="inputIncidentLocatieLandCode_236" externalValue="Vanuata" internalValue="VU" />
+				<allowedValue name="inputIncidentLocatieLandCode_237" externalValue="Vaticaanstad" internalValue="VA" />
+				<allowedValue name="inputIncidentLocatieLandCode_238" externalValue="Venezuela" internalValue="VE" />
+				<allowedValue name="inputIncidentLocatieLandCode_239" externalValue="Verenigd Koninkrijk" internalValue="GB" />
+				<allowedValue name="inputIncidentLocatieLandCode_240" externalValue="Verenigde Arabische Emiraten" internalValue="AE" />
+				<allowedValue name="inputIncidentLocatieLandCode_241" externalValue="Verenigde Staten" internalValue="US" />
+				<allowedValue name="inputIncidentLocatieLandCode_242" externalValue="Vietnam" internalValue="VN" />
+				<allowedValue name="inputIncidentLocatieLandCode_243" externalValue="Wallis en Futuna" internalValue="WF" />
+				<allowedValue name="inputIncidentLocatieLandCode_244" externalValue="Westelijke Sahara" internalValue="EH" />
+				<allowedValue name="inputIncidentLocatieLandCode_245" externalValue="Wit-Rusland" internalValue="BY" />
+				<allowedValue name="inputIncidentLocatieLandCode_246" externalValue="Yemen" internalValue="YE" />
+				<allowedValue name="inputIncidentLocatieLandCode_247" externalValue="Zambia" internalValue="ZM" />
+				<allowedValue name="inputIncidentLocatieLandCode_248" externalValue="Zimbabwe" internalValue="ZW" />
+				<allowedValue name="inputIncidentLocatieLandCode_249" externalValue="Zuid Afrika" internalValue="ZA" />
+				<allowedValue name="inputIncidentLocatieLandCode_250" externalValue="Zuid Korea" internalValue="KR" />
+				<allowedValue name="inputIncidentLocatieLandCode_251" externalValue="Zweden" internalValue="SE" />
+				<allowedValue name="inputIncidentLocatieLandCode_252" externalValue="Zwitserland" internalValue="CH" />
+			</input>
+		</codeListField>
+		<textField visualizationHint="SingleLine" casing="None" name="IncidentLocatieBreedteGraad">
+			<errorMessage>Breedtegraad bevat een ongeldige waarde.</errorMessage>
+			<label>Breedtegraad</label>
+			<input name="inputIncidentLocatieBreedteGraad" delta="Unchanged" />
+			<maxLength>20</maxLength>
+			<maxLengthMessage>Breedtegraad mag niet groter zijn dan 20.</maxLengthMessage>
+		</textField>
+		<textField visualizationHint="SingleLine" casing="None" name="IncidentLocatieLengteGraad">
+			<errorMessage>Lengtegraad bevat een ongeldige waarde.</errorMessage>
+			<label>Lengtegraad</label>
+			<input name="inputIncidentLocatieLengteGraad" delta="Unchanged" />
+			<maxLength>20</maxLength>
+			<maxLengthMessage>Lengtegraad mag niet groter zijn dan 20.</maxLengthMessage>
+		</textField>
+	</formGroup>
+	<formGroup visualizationHint="Fixed" name="SchaderelatieOverzicht">
+		<label>Schaderelaties</label>
+		<list sourceContainer="Certigo.Core.InsuranceModels.Claim" sourceId="Incident.ClaimParties" pageCount="0" currentPage="0" name="ClaimParties1">
+			<columns>
+				<column name="ColLabel" label="Naam" active="true" sortOrder="None" size="0" innerValueSourceId="Reference" outerValueSourceId="Label" navigationValue="toClaimParty" />
+				<column name="ColIndicator" label="Bijzonderheden" sortOrder="None" size="0" outerValueSourceId="HasFraudIndication" />
+				<column name="ColRemove" active="true" sortOrder="None" size="0" innerValueSourceId="Reference" outerValueSourceId="Verwijder" navigationValue="toRemoveClaimParty" />
+			</columns>
+			<rows>
+				<row>
+					<cells>
+						<cell columnName="ColLabel" outerValue="J Hulsman" innerValue="1200002" navigationValue="toClaimParty" />
+						<cell columnName="ColIndicator" outerValue="Nee" />
+						<cell columnName="ColRemove" outerValue="Verwijder" innerValue="1200002" navigationValue="toRemoveClaimParty" />
+					</cells>
+				</row>
+			</rows>
+		</list>
+		<field name="SchaderelatieOverzichtField1" spanAll="true">
+			<useCaseNavigator useCaseNavigatorHint="Button" label="Schaderelatie toevoegen" navigationValue="toAddClaimParty" name="navAddClaimParty">
+				<visualizationRules>
+					<visualizationRule>
+						<visualizationAssignment>
+							<left>
+								<value>navAddClaimParty</value>
+							</left>
+							<visualizationValueHidden />
+						</visualizationAssignment>
+						<visualizationConditions>
+							<visualizationCondition>
+								<relationalOperatorEqualsTo />
+								<left>
+									<value>Status</value>
+								</left>
+								<literalValue>
+									<value>Closed</value>
+								</literalValue>
+							</visualizationCondition>
+						</visualizationConditions>
+					</visualizationRule>
+				</visualizationRules>
+			</useCaseNavigator>
+		</field>
+	</formGroup>
+	<formGroup visualizationHint="Fixed" name="SchadeObjectBasisReadOnly" isReadOnly="true">
+		<visualizationRules>
+			<visualizationRule>
+				<visualizationAssignment>
+					<left>
+						<value>Delete</value>
+					</left>
+					<visualizationValueReadOnly />
+				</visualizationAssignment>
+				<visualizationConditions>
+					<visualizationCondition>
+						<relationalOperatorEqualsTo />
+						<logicalOperatorAnd />
+						<left>
+							<value>IsTotalLossType</value>
+						</left>
+						<literalValue>
+							<value>True</value>
+						</literalValue>
+					</visualizationCondition>
+					<visualizationCondition>
+						<relationalOperatorEqualsTo />
+						<left>
+							<value>TotalLossFraudSystemRegistration</value>
+						</left>
+						<literalValue>
+							<value>True</value>
+						</literalValue>
+					</visualizationCondition>
+				</visualizationConditions>
+			</visualizationRule>
+		</visualizationRules>
+		<label>Schadeobjectgegevens</label>
+	</formGroup>
+	<formGroup visualizationHint="Fixed" name="SchadeObject" isReadOnly="true">
+		<visualizationRules>
+			<visualizationRule>
+				<visualizationAssignment>
+					<left>
+						<value>Delete</value>
+					</left>
+					<visualizationValueReadOnly />
+				</visualizationAssignment>
+				<visualizationConditions>
+					<visualizationCondition>
+						<relationalOperatorEqualsTo />
+						<logicalOperatorAnd />
+						<left>
+							<value>IsTotalLossType</value>
+						</left>
+						<literalValue>
+							<value>True</value>
+						</literalValue>
+					</visualizationCondition>
+					<visualizationCondition>
+						<relationalOperatorEqualsTo />
+						<left>
+							<value>TotalLossFraudSystemRegistration</value>
+						</left>
+						<literalValue>
+							<value>True</value>
+						</literalValue>
+					</visualizationCondition>
+				</visualizationConditions>
+			</visualizationRule>
+		</visualizationRules>
+		<label>Schadeobjectdetails</label>
+	</formGroup>
+	<field name="IncidentButtons">
+		<useCaseNavigator useCaseNavigatorHint="Button" label="Schade object toevoegen" activationId="Create" navigationValue="toCreateLossObject" name="CreateLossObject" isHidden="true">
+			<visualizationRules>
+				<visualizationRule>
+					<visualizationAssignment>
+						<left>
+							<value>CreateLossObject</value>
+						</left>
+						<visualizationValueVisible />
+					</visualizationAssignment>
+					<visualizationConditions>
+						<visualizationCondition>
+							<relationalOperatorEqualsTo />
+							<left>
+								<value>HasLossObject1</value>
+							</left>
+							<literalValue>
+								<value>False</value>
+							</literalValue>
+						</visualizationCondition>
+					</visualizationConditions>
+				</visualizationRule>
+			</visualizationRules>
+		</useCaseNavigator>
+		<useCaseNavigator useCaseNavigatorHint="Button" label="Schade object wijzigen" activationId="IncidentObject" navigationValue="toLossObject" name="ModifyLossObject" isHidden="true">
+			<visualizationRules>
+				<visualizationRule>
+					<visualizationAssignment>
+						<left>
+							<value>ModifyLossObject</value>
+						</left>
+						<visualizationValueVisible />
+					</visualizationAssignment>
+					<visualizationConditions>
+						<visualizationCondition>
+							<relationalOperatorEqualsTo />
+							<left>
+								<value>HasLossObject1</value>
+							</left>
+							<literalValue>
+								<value>True</value>
+							</literalValue>
+						</visualizationCondition>
+					</visualizationConditions>
+				</visualizationRule>
+			</visualizationRules>
+		</useCaseNavigator>
+	</field>
+	<formGroup visualizationHint="Fixed" name="ClaimSupportFields1" isHidden="true">
+		<codeListField visualizationHint="CheckBoxes" multiSelect="true" hideEmptyValue="false" required="true" name="Status" isHidden="false" visualizationDependency="true">
+			<emptyMessage>Status is niet ingevuld.</emptyMessage>
+			<errorMessage>Status bevat een ongeldige waarde.</errorMessage>
+			<label>Status</label>
+			<input name="inputStatus" value="Created" delta="Unchanged">
+				<allowedValue name="inputStatusValCreated" externalValue="Voorlopig" internalValue="Created" selected="true" />
+				<allowedValue name="inputStatusValSubmitted" externalValue="Lopend" internalValue="Submitted" />
+				<allowedValue name="inputStatusValExpired" externalValue="Vervallen" internalValue="Expired" />
+				<allowedValue name="inputStatusValClosed" externalValue="Gesloten" internalValue="Closed" />
+				<allowedValue name="inputStatusValEnding" externalValue="Aflopend" internalValue="Ending" />
+			</input>
+		</codeListField>
+		<booleanField visualizationHint="SelectBox" name="HasLossObject1" isReadOnly="true" visualizationDependency="true">
+			<errorMessage>Has loss object bevat een ongeldige waarde.</errorMessage>
+			<label>Has loss object</label>
+			<input name="inputHasLossObject1" value="False" delta="Unchanged">
+				<allowedValue name="inputHasLossObject1True" externalValue="Ja" internalValue="True" />
+				<allowedValue name="inputHasLossObject1False" externalValue="Nee" internalValue="False" selected="true" />
+			</input>
+		</booleanField>
+	</formGroup>
+	<systemField name="CertigoNavigation" isHidden="true">
+		<input name="inputCertigoNavigation" delta="Unchanged" />
+	</systemField>
+	<systemField name="CertigoActivationContainer" isHidden="true">
+		<input name="inputCertigoActivationContainer" delta="Unchanged" />
+	</systemField>
+	<systemField name="CertigoActivationAction" isHidden="true">
+		<input name="inputCertigoActivationAction" delta="Unchanged" />
+	</systemField>
+	<systemField name="CertigoActivationId" isHidden="true">
+		<input name="inputCertigoActivationId" delta="Unchanged" />
+	</systemField>
+	<systemField name="CertigoPrefix" isHidden="true">
+		<input name="inputCertigoPrefix" value="" delta="Unchanged" />
+	</systemField>
+	<systemField name="CertigoUseCaseName" isHidden="true">
+		<input name="inputCertigoUseCaseName" delta="Unchanged" />
+	</systemField>
+	<systemField name="CertigoStateName" isHidden="true">
+		<input name="inputCertigoStateName" value="StepDataEntry" delta="Unchanged" />
+	</systemField>
+	<publisherInfo transactionId="IncidentReference=1000002;ClaimReference=1400002;TargetObjectIdentifier=fdd0f563-05a0-4d4e-953b-140808adcf0d" eventName="IncidentEntered" name="publisherInfo_0" />
+	<systemField name="CertigoSessionId" isHidden="true">
+		<input name="inputCertigoSessionId" value="4a59cb03-70f6-4bc3-bd82-7c7fb787c8c7" delta="Unchanged" />
+	</systemField>
+	<systemField name="CertigoSynchronizationKey" isHidden="true">
+		<input name="inputCertigoSynchronizationKey" value="98b3bd01-0564-4503-9dca-1104e69aadfe" delta="Unchanged" />
+	</systemField>
+	<systemField name="CertigoPreviousNavigation" isHidden="true">
+		<input name="inputCertigoPreviousNavigation" value="toIncident" delta="Unchanged" />
+	</systemField>
+	<systemField name="CertigoPreviousUseCaseStep" isHidden="true">
+		<input name="inputCertigoPreviousUseCaseStep" delta="Unchanged" />
+	</systemField>
+</form>
